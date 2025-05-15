@@ -15,12 +15,12 @@ pipeline {
                 sh 'bash script.sh'
             }
         }
+    }
 post {
         always {
             mail to: 'sujishreek2002@gmail.com',
-                 subject: "Jenkins Build: \${currentBuild.fullDisplayName}",
-                 body: "Build finished with status: \${currentBuild.currentResult}"
+                 subject: "Jenkins Build: ${currentBuild.fullDisplayName}",
+                 body: "Build result: ${currentBuild.currentResult}\n\nCheck console output at: ${env.BUILD_URL}"
         }
-      }
     }
 }
