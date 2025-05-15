@@ -15,7 +15,7 @@ pipeline {
                 sh 'bash script.sh'
             }
         }
-        post {
+post {
         always {
             mail to: 'sujishreek2002@gmail.com',
                  subject: "Jenkins Build: \${currentBuild.fullDisplayName}",
